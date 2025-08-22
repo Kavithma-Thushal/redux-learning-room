@@ -8,7 +8,7 @@ export default function Count() {
 
     return (
         <div
-            className="bg-white/20 backdrop-blur-lg rounded-3xl p-12 flex flex-col items-center border border-white/30">
+            className="bg-white/30 backdrop-blur-lg rounded-3xl p-12 flex flex-col items-center border border-white/30">
             <h1 className="text-7xl font-extrabold mb-10 text-yellow-300 transition-transform duration-300">{count}</h1>
             <div className="flex gap-8">
                 <button onClick={() => dispatch(decrement())}

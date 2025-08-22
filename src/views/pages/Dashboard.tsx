@@ -3,7 +3,7 @@ import Watch from "../components/Watch";
 
 export default function Dashboard() {
     return (
-        <div className="grid grid-cols-2 min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 p-8">
+        <div className="grid grid-cols-2 min-h-screen p-8">
 
             <h1 className="col-span-2 text-center text-6xl font-bold text-white">Dashboard</h1>
 

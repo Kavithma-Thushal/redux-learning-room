@@ -26,7 +26,7 @@ export default function Watch() {
     return (
         <div className="flex flex-col items-center justify-center gap-4">
             {/* Digital Clock */}
-            <div className="px-10 py-6 rounded-2xl bg-black/40 backdrop-blur-lg border-2 border-white/30 shadow-lg">
+            <div className="px-10 py-6 rounded-2xl bg-white/30 backdrop-blur-lg border-2 border-white/30 shadow-lg">
                 <p className="text-6xl font-mono text-white tracking-widest">
                     {formatTime(time)}
                 </p>

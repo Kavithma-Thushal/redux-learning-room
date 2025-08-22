@@ -26,9 +26,9 @@ export default function Register() {
 
     return (
         <div
-            className="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 p-8">
+            className="flex items-center justify-center min-h-screen p-8">
             <div
-                className="bg-white/20 backdrop-blur-lg shadow-lg rounded-3xl p-12 w-[550px] border border-white/30 flex flex-col items-center">
+                className="bg-white/30 backdrop-blur-lg shadow-lg rounded-3xl p-12 w-[550px] border border-white/30 flex flex-col items-center">
                 <h2 className="text-6xl font-bold mb-10">REGISTER</h2>
                 <form onSubmit={register} className="w-full space-y-6">
 
@@ -93,7 +93,7 @@ export default function Register() {
 
                     <div className="flex justify-center">
                         <button type="submit"
-                                className="bg-blue-400 py-3 rounded-lg font-semibold shadow-lg hover:scale-105 transition duration-300 px-6 w-full">REGISTER
+                                className="bg-blue-400 py-3 rounded-lg font-semibold shadow-lg hover:scale-105 transition duration-300 px-10 mt-5">REGISTER
                         </button>
                     </div>
                 </form>
