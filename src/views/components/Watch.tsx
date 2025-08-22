@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
-import type {RootState} from "../../store/store";
-import {incrementTick} from "../../store/slices/watchSlice";
+import type {RootState} from "../../config/store.ts";
+import {incrementTick} from "../../slices/watchSlice";
 
 export default function Watch() {
     const [time, setTime] = useState(new Date());
