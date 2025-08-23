@@ -1,7 +1,7 @@
 import {configureStore} from "@reduxjs/toolkit";
-import countReducer from "../slices/countSlice.ts";
-import watchReducer from "../slices/watchSlice.ts";
-import registerReducer from "../slices/registerSlice.ts";
+import countReducer from "./slices/countSlice.ts";
+import watchReducer from "./slices/watchSlice.ts";
+import registerReducer from "./slices/registerSlice.ts";
 
 export const store = configureStore({
     reducer: {

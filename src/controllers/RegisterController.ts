@@ -1,10 +1,10 @@
 import axios from "axios";
-import {BASE_URL} from "../config/api.ts";
+import {BASE_URL} from "../api/api.ts";
 import {useNavigate} from "react-router-dom";
 import {successNotification, errorNotification} from "../util/alert.ts";
 import {useSelector, useDispatch} from "react-redux";
-import type {RootState, AppDispatch} from "../config/store.ts";
-import {setField, resetForm} from "../slices/registerSlice.ts";
+import type {RootState, AppDispatch} from "../store/store.ts";
+import {setField, resetForm} from "../store/slices/registerSlice.ts";
 
 export default function RegisterController() {
     const form = useSelector((state: RootState) => state.register);
