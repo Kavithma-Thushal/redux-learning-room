@@ -2,7 +2,7 @@ import {useState} from "react";
 import RegisterController from "../../controllers/RegisterController.ts";
 
 export default function Register() {
-    const {form, register, handleChange} = RegisterController();
+    const {form, handleChange, handleRegister} = RegisterController();
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -26,11 +26,11 @@ export default function Register() {
 
     return (
         <div
-            className="flex items-center justify-center min-h-screen p-8">
+            className="flex items-center justify-center min-h-screen p-8 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
             <div
                 className="bg-white/30 backdrop-blur-lg shadow-lg rounded-3xl p-12 w-[550px] border border-white/30 flex flex-col items-center">
                 <h2 className="text-6xl font-bold mb-10">REGISTER</h2>
-                <form onSubmit={register} className="w-full space-y-6">
+                <form onSubmit={handleRegister} className="w-full space-y-6">
 
                     <input
                         name="name"

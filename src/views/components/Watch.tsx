@@ -1,12 +1,12 @@
 import {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
-import type {RootState} from "../../config/store.ts";
-import {incrementTick} from "../../slices/watchSlice";
+import type {RootState, AppDispatch} from "../../config/store.ts";
+import {incrementTick} from "../../slices/watchSlice.ts";
 
 export default function Watch() {
     const [time, setTime] = useState(new Date());
     const tick = useSelector((state: RootState) => state.watch.tick);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
         const interval = setInterval(() => {

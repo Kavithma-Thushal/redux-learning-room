@@ -1,9 +1,10 @@
+import axios from "axios";
+import {BASE_URL} from "../config/api.ts";
+import {useNavigate} from "react-router-dom";
+import {successNotification, errorNotification} from "../util/alert.ts";
 import {useSelector, useDispatch} from "react-redux";
 import type {RootState, AppDispatch} from "../config/store.ts";
 import {setField, resetForm} from "../slices/registerSlice.ts";
-import {useNavigate} from "react-router-dom";
-import {register, type RegisterForm} from "../service/RegisterService.ts";
-import {successNotification, errorNotification} from "../util/alert.ts";
 
 export default function RegisterController() {
     const form = useSelector((state: RootState) => state.register);
@@ -11,7 +12,7 @@ export default function RegisterController() {
     const navigate = useNavigate();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(setField({field: e.target.name as keyof RegisterForm, value: e.target.value}));
+        dispatch(setField({field: e.target.name as keyof typeof form, value: e.target.value}));
     };
 
     const validateForm = () => {
@@ -33,20 +34,20 @@ export default function RegisterController() {
     const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!validateForm()) return;
+
         try {
-            const response = await register(form as RegisterForm);
-            successNotification(response);
+            const response = await axios.post(`${BASE_URL}/register`, form);
+            successNotification(response.data.message);
             dispatch(resetForm());
             navigate("/dashboard");
         } catch (error: any) {
-            errorNotification(Object.values(error));
+            errorNotification(Object.values(error.response.data.error));
         }
     };
 
     return {
         form,
-        handleRegister,
         handleChange,
-        validateForm
+        handleRegister
     };
 }
